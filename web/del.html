@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+
+    <body>
+        <div class="topnav">
+            <a href="index.html">VATSIM Route API Documentation</a>
+            <a href="get.html">Getting Routes</a>
+            <a href="post.html">Adding Routes</a>
+            <a href="del.html" class="active">Deleting Routes</a>
+        </div>
+        <div class="main">
+            <p>To add routes for a specific destination and arrival, send a DEL request the following URL:</p>
+            <p><code>https://ifr-routeapi.ga/api/routes?dep=zzzz&arr=zzzz&artcc=zxxuserID=xxxxxx&token=yourIssuedToken</code></p>
+            <p>Replace "zzzz" with the 2 Airport codes, dep is the Departure and arr is the arrival. Replace zxx with the departure artcc. Replace xxxxxx with your Issued User ID and "yourIssuedToken" with your issued token</p>
+            <p>The response will be a <b><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">HTTP Status Code</a></b>. If the route was sucessfully deleted you will get <b><code>202 created</code></b>. If you forgot to authenticate you will get <b><code>401 unauthorzied</code></b>. If you provide a userID and token, but you do not have the permissions to delete routes, you will get a <b><code>403 Forbidden</code></b></p>
+        </div>
+        <hr>
+    </body>
+    <footer>
+        <p>&copy; Samuel Valencia 2022 | <b>Not for real world navigation</b></p>
+    </footer>
+</html>
